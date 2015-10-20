@@ -1712,7 +1712,6 @@ public class VideoModule implements CameraModule,
         } else {
             path = Storage.DIRECTORY + '/' + filename;
         }
-        String tmpPath = path + ".tmp";
         mCurrentVideoValues = new ContentValues(9);
         mCurrentVideoValues.put(Video.Media.TITLE, title);
         mCurrentVideoValues.put(Video.Media.DISPLAY_NAME, filename);
@@ -1728,7 +1727,7 @@ public class VideoModule implements CameraModule,
             mCurrentVideoValues.put(Video.Media.LATITUDE, loc.getLatitude());
             mCurrentVideoValues.put(Video.Media.LONGITUDE, loc.getLongitude());
         }
-        mVideoFilename = tmpPath;
+        mVideoFilename = path;
         Log.v(TAG, "New video filename: " + mVideoFilename);
     }
 
