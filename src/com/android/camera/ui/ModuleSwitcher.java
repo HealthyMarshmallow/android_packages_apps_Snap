@@ -144,7 +144,7 @@ public class ModuleSwitcher extends RotateImageView
         if (i == GCAM_MODULE_INDEX) {
           setImageResource(R.drawable.ic_switch_camera);
         } else {
-          setImageResource(mDrawIds[i]);
+          setImageResource(R.drawable.ic_switcher);
         }
     }
 
