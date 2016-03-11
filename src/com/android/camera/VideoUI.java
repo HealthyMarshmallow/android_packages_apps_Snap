@@ -123,9 +123,7 @@ public class VideoUI implements PieRenderer.PieListener,
         @Override
         public void onLayoutChange(View v, int left, int top, int right,
                 int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-            if(mVideoMenu != null) {
-                mVideoMenu.tryToCloseSubList();
-            }
+            tryToCloseSubList();
         }
     };
 
@@ -1120,6 +1118,11 @@ public class VideoUI implements PieRenderer.PieListener,
         }
         RotateTextToast.setOrientation(orientation);
         mOrientation = orientation;
+    }
+
+    public void tryToCloseSubList() {
+        if (mVideoMenu != null)
+            mVideoMenu.tryToCloseSubList();
     }
 
     public int getOrientation() {
