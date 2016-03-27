@@ -3734,7 +3734,6 @@ public class PhotoModule
                 doModeSwitch = updateCameraParametersPreference();
             }
 
-            CameraUtil.dumpParameters(mParameters);
             mCameraDevice.setParameters(mParameters);
             mFocusManager.setParameters(mParameters);
 
