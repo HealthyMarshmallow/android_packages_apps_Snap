@@ -201,8 +201,8 @@ public class CameraControls extends RotatableLayout {
         mHistogramView = (HistogramView) findViewById(R.id.histogram);
 
         mTopViews = new View[] {
-            mMenu, mFrontBackSwitcher, mFilterModeSwitcher,
-            mSceneModeSwitcher, mHdrSwitcher, mAutoHdrNotice, mHistogramView
+            mMenu, mSceneModeSwitcher, mFrontBackSwitcher,
+            mFilterModeSwitcher, mHdrSwitcher, mAutoHdrNotice, mHistogramView
         };
         mBottomViews = new View[] {
             mPreview, mShutter, mSwitcher
@@ -257,8 +257,8 @@ public class CameraControls extends RotatableLayout {
             asRow(true, w, h, rotation, mHdrSwitcher, mSceneModeSwitcher,
                 mFilterModeSwitcher, mFrontBackSwitcher, mMenu);
         } else {
-            asRow(true, w, h, rotation, mMenu, mFrontBackSwitcher,
-                mFilterModeSwitcher, mSceneModeSwitcher, mHdrSwitcher);
+            asRow(true, w, h, rotation, mMenu, mSceneModeSwitcher,
+                mFrontBackSwitcher, mFilterModeSwitcher, mHdrSwitcher);
         }
 
         center(mAutoHdrNotice, l, t + mSize, r,
