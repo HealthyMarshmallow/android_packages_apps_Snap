@@ -90,7 +90,7 @@ public class CameraUtil {
     public static final String KEY_SHOW_WHEN_LOCKED = "showWhenLocked";
 
     // Orientation hysteresis amount used in rounding, in degrees
-    public static final int ORIENTATION_HYSTERESIS = 10;
+    public static final int ORIENTATION_HYSTERESIS = 15;
 
     public static final String REVIEW_ACTION = "com.android.camera.action.REVIEW";
     // See android.hardware.Camera.ACTION_NEW_PICTURE.
