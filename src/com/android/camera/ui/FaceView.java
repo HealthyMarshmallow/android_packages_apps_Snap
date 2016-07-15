@@ -238,7 +238,7 @@ public class FaceView extends View
                     float[] point = new float[4];
                     int delta_x = mFaces[i].rect.width() / 12;
                     int delta_y = mFaces[i].rect.height() / 12;
-                    Log.e(TAG, "blink: (" + face.getLeftEyeBlinkDegree()+ ", " +
+                    if (LOGV) Log.e(TAG, "blink: (" + face.getLeftEyeBlinkDegree()+ ", " +
                         face.getRightEyeBlinkDegree() + ")");
                     if (face.leftEye != null) {
                         if ((mDisplayRotation == 0) ||
@@ -349,7 +349,7 @@ public class FaceView extends View
                     }
 
                     if (face.mouth != null) {
-                        Log.e(TAG, "smile: " + face.getSmileDegree() + "," +
+                        if (LOGV) Log.e(TAG, "smile: " + face.getSmileDegree() + "," +
                             face.getSmileScore());
                         if (face.getSmileDegree() < smile_threashold_no_smile) {
                             if ((mDisplayRotation == 90) ||
