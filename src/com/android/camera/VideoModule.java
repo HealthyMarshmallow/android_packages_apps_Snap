@@ -85,6 +85,7 @@ public class VideoModule implements CameraModule,
     FocusOverlayManager.Listener,
     CameraPreference.OnPreferenceChangedListener,
     ShutterButton.OnShutterButtonListener,
+    LocationManager.Listener,
     MediaRecorder.OnErrorListener,
     MediaRecorder.OnInfoListener {
 
@@ -491,7 +492,7 @@ public class VideoModule implements CameraModule,
         mUI.setPrefChangedListener(this);
 
         mQuickCapture = mActivity.getIntent().getBooleanExtra(EXTRA_QUICK_CAPTURE, false);
-        mLocationManager = new LocationManager(mActivity, null);
+        mLocationManager = new LocationManager(mActivity, this);
 
         mUI.setOrientationIndicator(0, false);
         setDisplayOrientation();
@@ -557,6 +558,23 @@ public class VideoModule implements CameraModule,
             mCameraDevice.setParameters(mParameters);
         }
     }
+
+    @Override
+    public void waitingLocationPermissionResult(boolean result) {
+        mLocationManager.waitingLocationPermissionResult(result);
+    }
+
+    @Override
+    public void enableRecordingLocation(boolean enable) {
+        String value = (enable ? RecordLocationPreference.VALUE_ON
+                        : RecordLocationPreference.VALUE_OFF);
+        if (mPreferences != null) {
+            mPreferences.edit()
+                .putString(CameraSettings.KEY_RECORD_LOCATION, value)
+                .apply();
+        }
+        mLocationManager.recordLocation(enable);
+     }
 
     // SingleTapListener
     // Preview area is touched. Take a picture.
@@ -2996,4 +3014,10 @@ public class VideoModule implements CameraModule,
         resumeVideoRecording();
     }
 
+    @Override
+    public void onErrorListener(int error) {
+        enableRecordingLocation(false);
+    }
+
 }
+
