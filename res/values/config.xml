@@ -61,4 +61,10 @@
 
     <!-- Enable support for LGE HDR -->
     <bool name="lge_hdr_mode">false</bool>
+
+    <!-- A list of scenemodes where Longshot should be enabled.
+         An empty list will use the default restrictions. If defined, longshot
+         will be enabled ONLY for these scenemodes and disabled for others. -->
+    <string-array name="longshot_scenemodes"></string-array>
+
 </resources>
