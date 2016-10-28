@@ -84,6 +84,7 @@ public class CameraSettings {
     public static final String KEY_AUDIO_ENCODER = "pref_camera_audioencoder_key";
     public static final String KEY_PICTURE_FORMAT = "pref_camera_pictureformat_key";
     public static final String KEY_ZSL = "pref_camera_zsl_key";
+    public static final String KEY_FOCUS_BEFORE_SHOT = "pref_camera_focus_before_key";
     public static final String KEY_CAMERA_SAVEPATH = "pref_camera_savepath_key";
     public static final String KEY_COLOR_EFFECT = "pref_camera_coloreffect_key";
     public static final String KEY_VIDEOCAMERA_COLOR_EFFECT = "pref_camera_video_coloreffect_key";

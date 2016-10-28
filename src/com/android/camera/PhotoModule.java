@@ -2201,6 +2201,11 @@ public class PhotoModule
         // Do not do focus if there is not enough storage.
         if (pressed && !canTakePicture()) return;
 
+        // Do not do focus if Focus Before Shot is turned off
+        String focusOnShot = mPreferences.getString(CameraSettings.KEY_FOCUS_BEFORE_SHOT,
+                                mActivity.getString(R.string.pref_camera_focus_before_default));
+        if (pressed && focusOnShot.equals("off")) return;
+
         if (pressed) {
             mFocusManager.onShutterDown();
         } else {
